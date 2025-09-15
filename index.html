@@ -402,9 +402,16 @@ counter--
 slideImage()
 }
 
-const goNext = () => {
-counter++
-slideImage()
+// const goNext = () => {
+// counter++
+// slideImage()
+// }
+    const goNext = () => {
+  counter++
+  if (counter >= slides.length) {   // last image ke baad
+    counter = 0                     // wapas first image pe le aao
+  }
+  slideImage()
 }
 const slideImage=() => {
 slides.forEach(
@@ -421,5 +428,6 @@ setInterval(goNext , 2000);
 </body>
 
 </html>
+
 
 
