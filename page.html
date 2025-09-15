@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"/>
+  <title>Template </title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      background: #f9f9f9;
+    }
+
+
+    .side1 {
+      flex: 1 1 250px;
+      background-color: white;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .side1 h2 {
+      background-color: #3acfcf;
+      color: white;
+      padding: 10px;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 4px;
+    }
+
+    .side1 p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .side1 button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+
+    .main {
+      flex: 3 1 600px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      height: 500px;
+    }
+
+    .template-card {
+      background-color: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      height: 350px;
+    }
+
+    .template-card:hover {
+      transform: scale(1.02);
+    }
+
+    .template-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .template-content {
+      padding: 15px;
+      
+    }
+
+    .template-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .template-meta {
+      font-size: 12px;
+      color: gray;
+    }
+
+    @media (max-width: 1000px) {
+      body {
+        flex-direction: column;
+      }
+
+      .side {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="side1">
+    <h2>TEMPLATED</h2>
+    <br><br>
+    <p>A collection of 850+ free CSS & HTML5 templates."Templated" means something is based on or uses a template, 
+       which serves as a pattern or guide for producing similar items or processes. The word can be used in various contexts,
+        such as a report created from a templated structure, nanostructures formed using a molecular template,
+         a software function designed to work with multiple data types, or a physical lighting device using a template to shape light. </p>
+    <button>Learn More</button>
+
+    <br><br>
+    <br><br>
+    <br><br>
+
+    <p><strong>@TEMPLATEDCO</strong></p>
+    <p>Follow us for updates</p>
+
+    <p><strong>HELP / FAQ</strong></p>
+    <p><strong>LICENSE</strong></p>
+  </div>
+
+ 
+  <div class="main">
+     <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/epilogue.jpg" alt="Template 1" />
+      <div class="template-content">
+        <div class="template-title">Epilogue</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+    <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/fullmotion.jpg" alt="Template 2" />
+      <div class="template-content">
+        <div class="template-title">Visualize</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+    <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/roadtrip.jpg" alt="Template 3" />
+      <div class="template-content">
+        <div class="template-title">Prism</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+     <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/visualize.jpg" alt="Template 4" />
+      <div class="template-content">
+        <div class="template-title">Visualize</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+    <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/prism.jpg" alt="Template 5" />
+      <div class="template-content">
+        <div class="template-title">Prism</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+    <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/typify.jpg" alt="Template 6" />
+      <div class="template-content">
+        <div class="template-title">Typeify</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+    <div class="template-card">
+      <img src="https://templated.live/items/thumbnails/retrospect.jpg" alt="Template 7" />
+      <div class="template-content">
+        <div class="template-title">Retrospect</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+    <div class="template-card">
+      <img src="https://via.placeholder.com/400x200" alt="Template 8" />
+      <div class="template-content">
+        <div class="template-title">Spatial</div>
+        <div class="template-meta">Responsive HTML5</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

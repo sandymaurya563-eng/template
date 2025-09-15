@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar 
+    t</title>
+  <style>
+    
+   
+    
+    .app{
+      height:100vh; width:100%;
+      display:grid;
+      grid-template-columns:260px ;             
+      grid-template-rows:72px ;                
+      grid-template-areas:
+        "sidebar topbar"
+        "sidebar content";
+      gap:16px; padding:16px;
+      padding: 10px;
+      background-color: #1c2140;
+    }
+
+    .side{
+      grid-area: sidebar; ;
+      display:flex;
+     flex-direction:column; 
+     overflow:hidden;
+      box-shadow: 0 0 0 1px #1f2440;
+      background-color: white;
+    }
+    .profile{
+      display:flex;
+       align-items:center;
+        gap:12px; padding:12px 14px;
+         border-bottom:1px solid #20264a; 
+     
+    }
+    .profile .avatar{
+      width:36px;
+       height:36px; 
+       border-radius:50%;
+    background-color: aquamarine;
+      flex:0 0 auto;
+    }
+    .profile .name{font-weight:600}
+   
+.name{
+  padding-left: 20px;
+}
+    
+    .nav a{
+      display:flex; align-items:center; gap:12px; ;
+      padding:10px 12px; border-radius:12px; ;
+    }
+    .nav a .icon{
+      width:24px; height:24px; border-radius:8px;;
+      display:grid; place-items:center; font-size:13px;
+      background-color: wheat ;
+      padding: 12px;
+    }
+    .nav a:hover{background: rgb(141, 137, 137)}
+   
+  .label{
+    padding-left: 30px;
+  }
+
+    @media (max-width: 768px){
+      .app{
+        grid-template-columns:80px ;           
+        grid-template-rows:56px ;             
+        gap:12px; padding:12px;
+      }
+      
+      .side{border-radius:16px; overflow:hidden}
+      .profile{ 
+        justify-content:center; 
+        padding:10px 0; 
+        border-bottom:1px solid #1e2444;
+      }
+      .profile .name{display:none}
+      
+
+      .nav a{justify-content:center; padding:10px}
+      .nav a .label{display:none;}
+      .nav a .icon{width:36px; height:36px; border-radius:12px;}
+
+    }
+@media(max-width:300px){
+      .nav:hover{
+      height:100vh; width:100%;
+      display:grid;
+      grid-template-columns:260px ;             
+      grid-template-rows:72px ;                
+      grid-template-areas:
+        "sidebar topbar"
+        "sidebar content";
+      gap:16px; padding:16px;
+      padding: 10px;
+      background-color: #1c2140;
+    }
+}
+    
+  </style>
+</head>
+<body>
+  <div class="app">
+   
+    <aside class="side">
+      <div class="profile">
+        <div class="avatar" ></div>
+        <div class="name">User Name</div>
+      </div>
+      <nav class="nav">
+        <a ><span class="icon">🧑‍💼</span><span class="label">Deepak Kushwaha</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Sanskriti Tiwari</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Prince Sharma</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Tannu Tyagi</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Rahul Sharma</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Kajal Sharma</span></a>
+         <a ><span class="icon">🧑‍💼</span><span class="label">Archana Rathor</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Radhika Sharma</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Sneha Maurya</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Abhishak Goswomi</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Anish Mehto</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Akash Sharma</span></a>
+        <a ><span class="icon">🧑‍💼</span><span class="label">Krishna Dubey</span></a>
+      </nav>
+    </aside>
+
+  </div>
+  <script>
+    const side=document.getElementById("side");
+    side.addEventListener("click",()=>  {
+side.classList.toggle("collapsed");
+    });
+  </script>
+</body>
+</html>
