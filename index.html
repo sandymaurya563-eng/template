@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+
+
+    bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      position: relative;
+      margin: 0%;
+      padding-right: 20px;
+      width: vw;
+    }
+
+    /* Website Logo */
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    /* Links */
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      margin-right: 22px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      background: #555;
+    }
+
+    /* Hamburger button */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-btn span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Hide checkbox */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Mobile Style */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -220px;
+        height: 100vh;
+        width: 200px;
+        flex-direction: column;
+        background: #333;
+        padding: 60px 20px;
+        gap: 20px;
+        transition: left 0.3s ease;
+      }
+
+      #menu-toggle:checked ~ .nav-links {
+        left: 0;
+      }
+
+      .menu-btn {
+        display: flex;
+      }
+     
+    }
+  
+    .app {
+      height: 100%;
+     width:vw ;
+      display: grid;
+      grid-template-columns: 210px;
+      grid-template-rows: 72px;
+      grid-template-areas:
+        "sidebar topbar"
+        "sidebar content";
+      gap: 16px; padding: 16px;
+     
+       background: linear-gradient(to right, #b89b9b,#4b96a9);
+       margin-top: -15px;
+     margin-left: -17px;
+    }
+
+    .side {
+      grid-area: sidebar;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px #1f2440;
+      background-color: white;
+      transition: width 0.3s ease;
+      z-index: +2;
+      height: 100%;
+      overflow: scroll;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 12px; padding: 12px 14px;
+      border-bottom: 1px solid #20264a;
+    }
+    .profile .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: aquamarine;
+      flex: 0 0 auto;
+    }
+    .profile .name { font-weight: 600; }
+
+    .nav a {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px; border-radius: 12px;
+      cursor: pointer;
+    }
+    .nav a .icon {
+      width: 24px; height: 24px;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: 13px;
+      background-color: wheat;
+      padding: 12px;
+    }
+    .nav a:hover { background: rgb(141, 137, 137); }
+
+    .label { white-space: nowrap; }
+
+    .change{
+      animation: change 20s linear infinite  ;
+    }
+
+    
+    @media (max-width: 768px) {
+      .app {
+        grid-template-columns: 80px;
+        grid-template-rows: 56px;
+        gap: 12px; padding: 12px;
+      
+      }
+     .side { width: 80px; }
+      .side.collapsed { width: 240px; }  /* expanded state */
+
+      .profile { justify-content: center; padding: 10px 0; }
+      .profile .name { display: none; }
+
+      .nav a { justify-content: center; }
+      .nav a .label { display: none; }
+      .side.collapsed .nav a { justify-content: flex-start; }
+      .side.collapsed .profile { justify-content: flex-start; }
+      .side.collapsed .profile .name { display: block; }
+      .side.collapsed .nav a .label { display: inline; }
+     img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .nav{
+        text-align: center;
+        margin: 0px;
+
+    }
+    .nav button{
+        font-size: 30px;
+        ;
+    }
+     
+    }
+      .side1 {
+        display: block;
+      flex:100px;
+      margin-right: 0px;
+      padding-left: 0px;
+      margin-top: 20px;
+      width: vw;
+      
+    }
+
+    .side1 h2 {
+      background-color: #3acfcf;
+      color: white;
+      padding: 0px;
+      margin-bottom: 15px;
+      text-align: center;
+      height: auto;
+      font-size:0px;
+      border-radius: 4px;
+    }
+
+    .side1 p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .side1 button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+
+
+    @media (max-width: 160px) {
+      body {
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+      }
+.nav bottom{
+  padding: 0px;
+  margin: 0px;
+}
+      .side {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+    .main{
+      flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+    }
+    button{
+      flex-direction: column;
+    }
+     
+    }
+  .main {
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+    margin-top: 60px;
+    box-shadow: 0px 0px 4px gray;
+    position: relative;
+    overflow: hidden;
+}
+
+   .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+    .nav{
+        text-align: center;
+        margin: 0px;
+
+    }
+    .nav button{
+        font-size: 10px;
+        ;
+    }
+  </style>
+</head>
+<body>
+    <bar>
+    <div class="logo">MyWebsite</div>
+
+    <!-- Hamburger Button -->
+    <label for="menu-toggle" class="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+   
+
+    <!-- Navbar Links -->
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#">Login</a>
+    </div>
+</bar>
+  <div class="app">
+    <aside class="side" id="sidebar">
+      <div class="profile">
+        <div class="avatar"></div>
+        <div class="name">User Name</div>
+      </div>
+      <nav class="nav">
+        <a><span class="icon">🧑‍💼</span><span class="label">Deepak Kushwaha</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Sanskriti Tiwari</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Prince Sharma</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Tannu Tyagi</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Rahul Sharma</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Kajal Sharma</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Archana Rathor</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Radhika Sharma</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Sneha Maurya</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Abhishak Goswomi</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Anish Mehto</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Akash Sharma</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Krishna Dubey</span></a>
+         <a><span class="icon">🧑‍💼</span><span class="label">Deepak Kushwaha</span></a>
+        <a><span class="icon">🧑‍💼</span><span class="label">Sanskriti Tiwari</span></a>
+      </nav>
+    </aside>
+    <div class="side1">
+    <h2>TEMPLATED</h2>
+    <div class="main">
+      <a href="file:///C:/Users/Admin/Desktop/New%20folder/login.html">
+<img src="https://picsum.photos/id/239/730/400" class="slide" alt style =" left: 0%;"> 
+<img src="https://picsum.photos/id/236/730/400" class="slide" alt style="left: 100%; ">
+<img src="https://picsum.photos/id/255/730/400" class="slide" alt style="left: 200%;">
+<img src="https://picsum.photos/id/243/730/400" class="slide" alt style="left: 300%;">
+<img src="https://picsum.photos/id/277/730/400" class="slide" alt style="left: 400%;"> 
+<img src="https://picsum.photos/id/238/730/400" class="slide" alt style="left: 500%;">
+<img src="https://picsum.photos/id/225/730/400" class="slide" alt style="left:600%;">
+<img src="https://picsum.photos/id/268/730/400" class="slide" alt style="left: 700%;">
+<img src="https://picsum.photos/id/239/730/400" class="slide" alt style =" left:800%;"> 
+<img src="https://picsum.photos/id/235/730/400" class="slide" alt style="left: 900%; ">
+<img src="https://picsum.photos/id/258/730/400" class="slide" alt style="left: 1000%;">
+<img src="https://picsum.photos/id/246/730/400" class="slide" alt style="left: 1100%;">
+<img src="https://picsum.photos/id/275/730/400" class="slide" alt style="left: 1200%;"> 
+<img src="https://picsum.photos/id/263/730/400" class="slide" alt style="left: 1300%;">
+<img src="https://picsum.photos/id/264/730/400" class="slide" alt style="left:1400%;">
+<img src="https://picsum.photos/id/261/730/400" class="slide" alt style="left: 1500%;">
+<img src="https://picsum.photos/id/239/730/400" class="slide" alt style =" left: 0%;"> 
+<img src="https://picsum.photos/id/236/730/400" class="slide" alt style="left: 100%; ">
+<img src="https://picsum.photos/id/255/730/400" class="slide" alt style="left: 200%;">
+<img src="https://picsum.photos/id/243/730/400" class="slide" alt style="left: 300%;">
+<img src="https://picsum.photos/id/277/730/400" class="slide" alt style="left: 400%;"> 
+<img src="https://picsum.photos/id/238/730/400" class="slide" alt style="left: 500%;">
+<img src="https://picsum.photos/id/225/730/400" class="slide" alt style="left:600%;">
+<img src="https://picsum.photos/id/268/730/400" class="slide" alt style="left: 700%;">
+<img src="https://picsum.photos/id/239/730/400" class="slide" alt style =" left:800%;"> 
+<img src="https://picsum.photos/id/235/730/400" class="slide" alt style="left: 900%; ">
+<img src="https://picsum.photos/id/258/730/400" class="slide" alt style="left: 1000%;">
+<img src="https://picsum.photos/id/246/730/400" class="slide" alt style="left: 1100%;">
+<img src="https://picsum.photos/id/275/730/400" class="slide" alt style="left: 1200%;"> 
+<img src="https://picsum.photos/id/263/730/400" class="slide" alt style="left: 1300%;">
+<img src="https://picsum.photos/id/264/730/400" class="slide" alt style="left:1400%;">
+<img src="https://picsum.photos/id/261/730/400" class="slide" alt style="left: 1500%;">
+</a>
+    </div>
+    <div class="nav">
+        <button onclick="goPrev()">Prev</button>
+        <button onclick="goNext()">Next</button>
+    </div>
+  </div>
+
+ 
+  
+  <script>
+    // Toggle sidebar on click
+    const sidebar = document.getElementById("sidebar");
+    sidebar.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+    });
+
+  const slides= document.querySelectorAll(".slide")
+var counter= 0;
+
+slides.forEach(
+(slide, index) => {
+slide.style.left = `${index * 100}%`
+}
+);
+const goPrev = () => {
+counter--
+slideImage()
+}
+
+const goNext = () => {
+counter++
+slideImage()
+}
+const slideImage=() => {
+slides.forEach(
+(slide) => {
+
+slide.style.transform =`translateX(-${counter *100}%)`
+}
+)}
+
+
+setInterval(goNext , 2000);
+
+  </script>
+</body>
+</html>
